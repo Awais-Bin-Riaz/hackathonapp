@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../bootstrap-5.1.0-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../bootstrap-5.1.0-dist/js/bootstrap.min.js">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="restaurant.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+         https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-analytics.js"></script>
+
+    <script>
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        var firebaseConfig = {
+            apiKey: "AIzaSyBf0aoDpHYZzvlDs3YQ0KmG_DXgeLMvECI",
+            authDomain: "foodapp-awais.firebaseapp.com",
+            databaseURL: "https://foodapp-awais-default-rtdb.firebaseio.com",
+            projectId: "foodapp-awais",
+            storageBucket: "foodapp-awais.appspot.com",
+            messagingSenderId: "591828205499",
+            appId: "1:591828205499:web:3d3813b426dbe01e958e9e",
+            measurementId: "G-D8LYL8FQN3"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        firebase.analytics();
+    </script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body onload="Accepted()">
+    <!-- Navbar start -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <i class="fa fa-cutlery" aria-hidden="true"></i>
+            <a class="navbar-brand" href="#"> FoodOye</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
+                aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarText">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+                </ul>
+                <span class="navbar-text">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="dashboard.html">dashboard</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="dishes.html">Add Dishes</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../login_signup/restaurant_login.html"><button
+                                    onclick="logOut()">Logout</button></a>
+                        </li>
+                    </ul>
+                </span>
+            </div>
+        </div>
+    </nav>
+    <!-- Navbar end -->
+
+    <h1>
+        Your Dishes
+    </h1>
+
+    <div class="container">
+        <div id="carditem" class="row">
+            
+        </div>
+    </div>
+
+
+    
+
+</body>
+<script src="../login_signup/login_signup.js"></script>
+
+</html>

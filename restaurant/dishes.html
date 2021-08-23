@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../bootstrap-5.1.0-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../bootstrap-5.1.0-dist/js/bootstrap.min.js">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="restaurant.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+         https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-analytics.js"></script>
+
+    <script>
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        var firebaseConfig = {
+            apiKey: "AIzaSyBf0aoDpHYZzvlDs3YQ0KmG_DXgeLMvECI",
+            authDomain: "foodapp-awais.firebaseapp.com",
+            databaseURL: "https://foodapp-awais-default-rtdb.firebaseio.com",
+            projectId: "foodapp-awais",
+            storageBucket: "foodapp-awais.appspot.com",
+            messagingSenderId: "591828205499",
+            appId: "1:591828205499:web:3d3813b426dbe01e958e9e",
+            measurementId: "G-D8LYL8FQN3"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        firebase.analytics();
+    </script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FoodOye | Dishes</title>
+</head>
+
+<body>
+    <!-- Navbar start -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <i class="fa fa-cutlery" aria-hidden="true"></i>
+            <a class="navbar-brand" href="#"> FoodOye</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
+                aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarText">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+                </ul>
+                <span class="navbar-text">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="dashboard.html">dashboard</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="dishes.html">Add Dishes</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../login_signup/restaurant_login.html"><button
+                                    onclick="logOut()">Logout</button></a>
+                        </li>
+                    </ul>
+                </span>
+            </div>
+        </div>
+    </nav>
+    <!-- Navbar end -->
+
+
+
+    <h2>Responsive Form</h2>
+    <p>Resize the browser window to see the effect. When the screen is less than 600px wide, make the two columns stack
+        on top of each other instead of next to each other.</p>
+
+    <div class="container">
+        <form onsubmit="return false">
+            <div class="row">
+                <div class="col-25">
+                    <label for="itemname">Item name</label>
+                </div>
+                <div class="col-75">
+                    <input type="text" id="itemname" placeholder="Items Name">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-25">
+                    <label for="price">Price</label>
+                </div>
+                <div class="col-75">
+                    <input type="text" id="price" name="price" placeholder="What is the price of item">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-25">
+                    <label for="category">Category</label>
+                </div>
+                <div class="col-75">
+                    <select id="category" name="category">
+                        <option value="chowmein">Chowmein</option>
+                        <option value="biryani">Biryani</option>
+                        <option value="burger">Burger</option>
+                        <option value="pizza">Pizza</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-25">
+                    <label> Dish Image</label>
+                </div>
+                <div class="col-75">
+                    <img src="image/dishes.jpg" alt="">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-25">
+                    <label for="delvtype">Delivery Type</label>
+                </div>
+                <div class="col-75">
+                    <select id="delvtype" name="delvtype">
+                        <option value="free">Free</option>
+                        <option value="paid">Paid</option>
+                    </select>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <button onclick="addDishes()">Add Dish</button>
+            </div>
+        </form>
+    </div>
+
+</body>
+<script src="../login_signup/login_signup.js"></script>
+
+</html>
